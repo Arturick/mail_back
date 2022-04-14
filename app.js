@@ -1,4 +1,4 @@
-require('dotenv').config()
+
 let Koa = require('koa');
 let Router = require('koa-router');
 const app = new Koa();
@@ -9,7 +9,7 @@ const postRouter = require('./src/router/post')
 const commentRouter = require('./src/router/comment')
 const marketRouter = require('./src/router/market')
 
-const PORT = process.env.PORT || 5000
+const PORT = require('./data/config').PORT
 router.use('/user', userRouter.routes())
 router.use('/post', postRouter.routes())
 router.use('/comment', commentRouter.routes())

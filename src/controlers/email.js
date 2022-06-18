@@ -57,7 +57,7 @@ class Email {
 
         let info = await transporter.sendMail({
             from: mailConfig.emailUser, // sender address
-            to: "testforcontactformnode@gmail.com", // list of receivers
+            to: mailConfig.emailUser, // list of receivers
             subject: "Hello ✔", // Subject line
             text: mess, // plain text body
 

@@ -32,12 +32,12 @@ class Email {
             },
         });
 
-        let nick = name.substring(0,100),
-            mail = email.substring(0,100),
-            comp = company.substring(0,100),
-            comp_web = website.substring(0,100)
+        let nick = name.substring(0,99),
+            mail = email.substring(0,99),
+            comp = company.substring(0,99),
+            comp_web = website.substring(0,99)
 
-        if(message.length > 500){
+        if(message.length > 499){
             mess =`
                 Name: ${nick}
                 Email: ${mail}

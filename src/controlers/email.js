@@ -6,9 +6,9 @@ const mailModule = require('../models/email')
 class Email {
     async send(cxt) {
         console.log(1)
-        const {name, email, company, company_website, message} = cxt.request.body;
+        const {name, email, company, website, message} = cxt.request.body;
         let mess
-        if (!name || !email || !company || !company_website || !message) {
+        if (!name || !email || !company || !website || !message) {
             cxt.status = 200;
             return cxt.body = {
                 answer: "not enough data"
@@ -35,7 +35,7 @@ class Email {
         let nick = name.substring(0,100),
             mail = email.substring(0,100),
             comp = company.substring(0,100),
-            comp_web = company_website.substring(0,100)
+            comp_web = website.substring(0,100)
 
         if(message.length > 500){
             mess =`

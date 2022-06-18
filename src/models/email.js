@@ -9,6 +9,7 @@ const email = {
         if(email in bd){
             if(Date.now() - Number(bd[email])< 100000){
                 return false
+                console.log(email)
             }
         }
         bd[email] = Date.now();

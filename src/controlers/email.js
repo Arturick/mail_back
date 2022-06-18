@@ -11,13 +11,13 @@ class Email {
         if (!name || !email || !company || !website || !message) {
             cxt.status = 200;
             return cxt.body = {
-                answer: "not enough data"
+                answer: "fail"
             }
         }
         if(!await mailModule.check(email)){
             cxt.status = 200;
             return cxt.body = {
-                answer: "too often req"
+                answer: "fail"
             }
         }
 
@@ -63,6 +63,10 @@ class Email {
 
         });
         console.log(new Date().toLocaleDateString(),new Date().toLocaleTimeString(),email)
+        cxt.code = 200;
+        cxt.body = {
+            answer : 'success'
+        }
 
 
 
